@@ -113,16 +113,17 @@
 
 
 
+    
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const form = document.querySelector('form');
-            
-            form.addEventListener('submit', async function(e) {
+        
+            form.addEventListener('submit', async function (e) {
                 e.preventDefault();
-                
+        
                 const courseCheckboxes = document.querySelectorAll('input[name="course"]:checked');
                 const selectedCourses = Array.from(courseCheckboxes).map(cb => cb.value);
-                
+        
                 const formData = new FormData();
                 formData.append('fullName', document.getElementById('fullName').value);
                 formData.append('email', document.getElementById('email').value);
@@ -133,33 +134,69 @@
                 formData.append('section', document.getElementById('section').value);
                 formData.append('courses', selectedCourses.join(','));
                 formData.append('internship', document.querySelector('input[name="internship"]:checked').value);
-
+        
                 try {
-                    //  fetch wali link ko env mein daal dena please yaad se
-                    // env
-                    // put in env
-                    // env env env
-
-                    
                     const response = await fetch(config.apiUrl, {
-    method: 'POST',
-    body: formData
-});
-
+                        method: 'POST',
+                        body: formData
+                    });
+        
                     const result = await response.json();
-                    
+        
                     if (result.status === 'success') {
-                        alert('Form submitted successfully!');
+                        const groupLinks = result.groupLinks.map(link =>
+                            `<a href="${link.link}" target="_blank" style="color: #007bff; text-decoration: underline;">${link.course}</a>`
+                        ).join(', ');
+        
+                        showToast(`
+                            <div>
+                                <strong>Successfully Registered!</strong>
+                                <p>Kindly join the respective groups to stay informed!</p>
+                                <p>WhatsApp group links: ${groupLinks}</p>
+                            </div>
+                        `);
                         form.reset();
                     } else {
-                        alert('Error submitting form: ' + result.message);
+                        showToast(`
+                            <div>
+                                <strong>Error submitting form</strong>
+                                <p>${result.message}</p>
+                            </div>
+                        `, true);
                     }
                 } catch (error) {
                     console.error('Error:', error);
-                    alert('Error submitting form. Please try again.');
+                    showToast(`
+                        <div>
+                            <strong>Error submitting form</strong>
+                            <p>Please try again later.</p>
+                        </div>
+                    `, true);
                 }
             });
+        
+            function showToast(content, isError = false) {
+                const overlay = document.createElement('div');
+                overlay.className = 'toast-overlay';
+        
+                const toast = document.createElement('div');
+                toast.className = `toast ${isError ? 'error' : 'success'}`;
+                toast.innerHTML = `
+                    ${content}
+                    <button class="close-toast">&times;</button>
+                `;
+        
+                overlay.appendChild(toast);
+                document.body.appendChild(overlay);
+        
+                const closeButton = toast.querySelector('.close-toast');
+                closeButton.addEventListener('click', () => overlay.remove());
+            }
         });
+        
+
+        
+        
     </script>
     
     
