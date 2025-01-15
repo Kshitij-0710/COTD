@@ -188,23 +188,34 @@ body {
       font-size: 14px;
     }
 
+    .sponsor-logos {
+        display: flex;
+        flex-direction: column; /* Stack exclusive and event sponsors */
+        align-items: center; /* Center the logos */
+        margin-bottom: 20px; /* Space below the sponsor section */
+    }
     
     .sponsor-bottom-logos {
         display: flex;
-        justify-content: center;
-        gap: 20px;
-        align-items: center;
+        flex-wrap: wrap; /* Allows logos to wrap to the next line */
+        justify-content: center; /* Centers the logos */
+        margin-top: 10px; /* Adds some space above the Event Sponsors heading */
+        max-width: 100%; /* Ensures it doesn't exceed the container */
     }
     
     .sponsor-bottom-logos img {
-        max-width: 80px; 
-        height: auto; 
-        object-fit: contain; 
+        max-width: 100px; /* Adjusts the size of the logos */
+        height: auto; /* Maintain aspect ratio */
+        margin: 5px; /* Adds space between logos */
     }
+
     
-    .alliance-logo {
-        max-width: 200px; 
-        height: auto; 
+
+    
+    .sponsor-bottom-logos h3 {
+        width: 100%; /* Make the heading full width */
+        text-align: center; /* Center the heading */
+        margin-bottom: 10px; /* Space below the heading */
     }
     
   }
