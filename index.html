@@ -33,9 +33,33 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <link rel="icon" href="img\COTD-logo.png">
+    <style>.footer {
+        background: black;
+        padding: 30px 0px;
+        font-family: 'Play', sans-serif;
+        text-align: center;
+      }
+      
+      .footer .row {
+        width: 100%;
+        margin: 1% 0%;
+        padding: 0.6% 0%;
+        color: gray;
+        font-size: 0.8em;
+      }
+      
+      
+      
+      @media (max-width: 720px) {
+        .footer {
+            text-align: left;
+            padding: 5%;
+        }
+      }</style>
 </head>
 
 <body>
+
     <!-- Spinner Start -->
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -50,7 +74,7 @@
                 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0 px-5" >
                     <a href="index.html" class="navbar-brand d-flex align-items-center ">
                         <!-- <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>eLEARNING</h2>-->
-                        <img src="img\COTD-logo.png" alt="Logo" style="width: 120px;">
+                        <img src="https://woxsen.edu.in/uploads/l20241112111757.webp" alt="Logo" style="width: 120px;">
                     </a>
                     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
                         data-bs-target="#navbarCollapse">
@@ -167,15 +191,52 @@
                         </div>
                     </div>
                 </div> 
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img\Sponsor6.jpg" alt="" style="height: auto; width: auto;">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img\sponsor7.jpg" alt="" style="height: auto; width: auto;">
+                        </div>
+                    </div>
+                </div> 
             </div>
         </div>
     </div>
+
+    <!--Video-->>
+    <div class="container-xxl" id="selection-process">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h1>Introducing Woxsen Olympiad: A Overview</h1>
+            </div>
+    
+            <div class="row g-5 justify-content-center">
+                <div class="col-lg-4 col-mb-4 wow fadeInUp" 
+                     data-wow-delay="0.1s" 
+                     style="min-height: 400px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                    <div class="d-flex justify-content-center align-items-center h-100">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/sbccCfHnBjM" 
+                                title="YouTube video player" frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Video Section ends-->>
 
     <!--Selection Process Start-->
     <div class="container-xxl py-5" id="selection-process">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Selection Process</h6>
+                <h6 class="section-title bg-white text-center text-primary px-3">No Selection Process</h6>
                 <h1 class="mb-5">Welcome to Woxsen Olympiad 2025</h1>
             </div>
 
@@ -547,6 +608,17 @@
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="team-item bg-light">
                         <div class="overflow-hidden">
+                            <img class="img-fluid" src="img\Puja Sree Vinta - Event Coordinator.jpg" alt="">
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Puja Sree Vinta</h5>
+                            <small>Event Coordinator</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden">
                             <img class="img-fluid" src="img\Pativada Sreeja.jpeg" alt="">
                         </div>
                         <div class="text-center p-4">
@@ -838,7 +910,13 @@
         </div>
     </div>
     <!-- Team End -->
-
+    <footer>
+        <div class="footer" id="footer">
+          <div class="row">
+            <span>Copyright © 2025 - All rights reserved - Woxsen University</span>
+          </div>
+        </div>
+      </footer>
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
