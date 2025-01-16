@@ -144,14 +144,12 @@
                     const result = await response.json();
         
                     if (result.status === 'success') {
-                        // Build the content for the toast
                         let toastContent = `
                             <div>
                                 <strong>Successfully Registered!</strong>
                             </div>
                         `;
         
-                        // Add the WhatsApp links only if groupLinks exist
                         if (result.groupLinks && result.groupLinks.length > 0) {
                             const groupLinksContent = result.groupLinks.map(link =>
                                 `<a href="${link.link}" target="_blank" style="color: #007bff; text-decoration: underline;">${link.course}</a>`
