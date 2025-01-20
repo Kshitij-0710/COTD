@@ -36,10 +36,11 @@
             
             
             <label for="rollNumber">Roll Number *</label>
-            <input type="text" id="rollNumber" name="rollNumber" required 
-                placeholder="_ _ WU _ _ _ _ _ _ _" 
-                pattern="\d{2}WU\d{7}" 
-                title="Format: Two digits followed by 'WU' and seven digits (e.g., 22WU0101028)">
+<input type="text" id="rollNumber" name="rollNumber" required 
+    placeholder="_ _ WU _ _ _ _ _ _ _ (or 8 digits)" 
+    pattern="\d{2}WU\d{7,8}" 
+    title="Format: Two digits followed by 'WU' and seven or eight digits (e.g., 22WU0101028 or 22WU01010289)">
+
 
             
             <label for="school">School *</label>
